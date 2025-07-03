@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Deployment  
+kind: Deployment
 metadata:
   name: microtodoui
   namespace: tod-ns
@@ -11,14 +11,14 @@ spec:
   template:
     metadata:
       labels:
-        app: microtodoui    
+        app: microtodoui
     spec:
       imagePullSecrets:
         - name: ghcr-secret
-      containers: 
-      - name: microtodoui
-        image: ghcr.io/abhishekg2244/myapp:latest
-        ports:
-          - containerPort: 80
+      containers:
+        - name: microtodoui
+          image: ghcr.io/abhishekg2244/myapp:latest
+          ports:
+            - containerPort: 80
         
      
