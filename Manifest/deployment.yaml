@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment  
+metadata:
+  name: microtodoui
+  namespace: microtodoui
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: microtodoui
+  template:
+    metadata:
+      labels:
+        app: microtodoui    
+    spec:
+      image:pullSecrets:
+        - name: ghcr-secrert
+      containers: 
+      - name: microtodoui
+        image: ghcr.io/abhishekg2244/myapp:latest
+        ports:
+          - containerPort: 80
+        
+     
