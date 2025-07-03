@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment  
 metadata:
   name: microtodoui
-  namespace: microtodoui
+  namespace: tod-ns
 spec:
   replicas: 4
   selector:
@@ -13,8 +13,8 @@ spec:
       labels:
         app: microtodoui    
     spec:
-      image:pullSecrets:
-        - name: ghcr-secrert
+      imagePullSecrets:
+        - name: ghcr-secret
       containers: 
       - name: microtodoui
         image: ghcr.io/abhishekg2244/myapp:latest
