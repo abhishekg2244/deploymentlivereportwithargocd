@@ -1,4 +1,4 @@
-apiVersion: v1                  # <-- should be v1 for Service
+apiVersion: v1
 kind: Service
 metadata:
   name: todoui-service
@@ -11,3 +11,4 @@ spec:
       port: 80
       targetPort: 80
   type: ClusterIP
+
