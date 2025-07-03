@@ -1,0 +1,12 @@
+apiVersion: apps/v1
+kind: Service 
+metadata:
+  name: todoui-service
+  namespace: tod-ns
+spec:
+  selector: 
+    app: microtodoui
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80

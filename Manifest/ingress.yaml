@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name:  
+  namespace: tod-ns
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: todoui-ab-learn.xyz
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: todoui-service
+                port:
+                  number: 80
+      
